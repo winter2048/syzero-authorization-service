@@ -1,52 +1,31 @@
-# Prerequisites
-*.d
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.log
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+.sonarqube/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Visual Studio cache/options directory
+.vs/
+.vscode/
+UserFiles/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# SVN directory
+.svn/
+.config/

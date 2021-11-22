@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>SyZero.Authorization.Repository</AssemblyName>
+    <RootNamespace>SyZero.Authorization.Repository</RootNamespace>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.SqlSugar\SyZero.SqlSugar.csproj" />
+    <ProjectReference Include="..\SyZero.Authorization.Core\SyZero.Authorization.Core.csproj" />
+  </ItemGroup>
+
+</Project>
+
+
+

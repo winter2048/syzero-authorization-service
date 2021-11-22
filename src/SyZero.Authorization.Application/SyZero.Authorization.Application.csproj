@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>SyZero.Authorization.Application</RootNamespace>
+    <AssemblyName>SyZero.Authorization.Application</AssemblyName>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SyZero.Authorization.Application.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SyZero.Authorization.IApplication\SyZero.Authorization.IApplication.csproj" />
+    <ProjectReference Include="..\SyZero.Authorization.Repository\SyZero.Authorization.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
+
+
+

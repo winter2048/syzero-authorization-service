@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SyZero.Authorization.Web.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.AspNetCore\SyZero.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.Consul\SyZero.Consul.csproj" />
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.DynamicWebApi\SyZero.DynamicWebApi.csproj" />
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.Feign\SyZero.Feign.csproj" />
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.Log4Net\SyZero.Log4Net.csproj" />
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.Nacos\SyZero.Nacos.csproj" />
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.Redis\SyZero.Redis.csproj" />
+    <ProjectReference Include="..\..\..\SYZERO\src\SyZero.Core\SyZero.Swagger\SyZero.Swagger.csproj" />
+    <ProjectReference Include="..\SyZero.Authorization.Application\SyZero.Authorization.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SyZero.Authorization.Web.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+</Project>
+
+
+

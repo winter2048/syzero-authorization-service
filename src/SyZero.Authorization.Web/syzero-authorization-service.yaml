@@ -1,0 +1,50 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s.kuboard.cn/layer: svc
+  name: authorization-service
+  namespace: syzero
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: authorization
+      app: service
+  template:
+    metadata:
+      labels:
+        project: authorization
+        app: service
+    spec:
+      imagePullSecrets:
+      - name: registry-pull-secret
+      containers:
+      - name: ssr
+        image: 192.168.2.40:8888/syzeroblog/syzero-blog-service:14
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          name: web
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authorization-service
+  namespace: syzero
+  labels:
+    project: authorization
+    app: service
+spec:
+  selector:
+    project: authorization
+    app: service
+  ports:
+  - name: web
+    port: 5000
+    targetPort: 5000
+    protocol: TCP
+    nodePort: 30005
+  type: NodePort
+
