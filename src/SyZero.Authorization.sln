@@ -15,35 +15,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Authorization.IAppli
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SyZero.Core", "SyZero.Core", "{1D7CA12B-B9B9-4E30-8AAF-EC57BBE37CDB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero", "..\..\SYZERO\src\SyZero.Core\SyZero\SyZero.csproj", "{563E88D7-5BA3-46C2-AEEE-77A963A743D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero", "..\..\syzero-core\src\SyZero.Core\SyZero\SyZero.csproj", "{563E88D7-5BA3-46C2-AEEE-77A963A743D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.AspNetCore", "..\..\SYZERO\src\SyZero.Core\SyZero.AspNetCore\SyZero.AspNetCore.csproj", "{05109E72-8E41-4BE7-99E0-CD4907EA3F59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.AspNetCore", "..\..\syzero-core\src\SyZero.Core\SyZero.AspNetCore\SyZero.AspNetCore.csproj", "{05109E72-8E41-4BE7-99E0-CD4907EA3F59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.AutoMapper", "..\..\SYZERO\src\SyZero.Core\SyZero.AutoMapper\SyZero.AutoMapper.csproj", "{CA7CAB60-2892-4219-9667-AAB7EF9CED69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.AutoMapper", "..\..\syzero-core\src\SyZero.Core\SyZero.AutoMapper\SyZero.AutoMapper.csproj", "{CA7CAB60-2892-4219-9667-AAB7EF9CED69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Consul", "..\..\SYZERO\src\SyZero.Core\SyZero.Consul\SyZero.Consul.csproj", "{9393C53D-6F6C-4A9E-B0E7-3641C2B84048}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Consul", "..\..\syzero-core\src\SyZero.Core\SyZero.Consul\SyZero.Consul.csproj", "{9393C53D-6F6C-4A9E-B0E7-3641C2B84048}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.EntityFrameworkCore", "..\..\SYZERO\src\SyZero.Core\SyZero.EntityFrameworkCore\SyZero.EntityFrameworkCore.csproj", "{DA2CB659-CE97-4A40-B3C6-736A1C0C5344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.EntityFrameworkCore", "..\..\syzero-core\src\SyZero.Core\SyZero.EntityFrameworkCore\SyZero.EntityFrameworkCore.csproj", "{DA2CB659-CE97-4A40-B3C6-736A1C0C5344}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Log4Net", "..\..\SYZERO\src\SyZero.Core\SyZero.Log4Net\SyZero.Log4Net.csproj", "{62B1A7CA-767F-4FBA-BA49-A9EFE846C455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Log4Net", "..\..\syzero-core\src\SyZero.Core\SyZero.Log4Net\SyZero.Log4Net.csproj", "{62B1A7CA-767F-4FBA-BA49-A9EFE846C455}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.MongoDB", "..\..\SYZERO\src\SyZero.Core\SyZero.MongoDB\SyZero.MongoDB.csproj", "{CA988525-74E5-4AA8-B693-05F23CE35EEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.MongoDB", "..\..\syzero-core\src\SyZero.Core\SyZero.MongoDB\SyZero.MongoDB.csproj", "{CA988525-74E5-4AA8-B693-05F23CE35EEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Redis", "..\..\SYZERO\src\SyZero.Core\SyZero.Redis\SyZero.Redis.csproj", "{2E309D68-12BB-483A-8D18-4BE97152A35F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Redis", "..\..\syzero-core\src\SyZero.Core\SyZero.Redis\SyZero.Redis.csproj", "{2E309D68-12BB-483A-8D18-4BE97152A35F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.ApiGateway", "..\..\SYZERO\src\SyZero.Core\SyZero.ApiGateway\SyZero.ApiGateway.csproj", "{3E05D1BD-3432-4774-9502-3B716CA40D26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.ApiGateway", "..\..\syzero-core\src\SyZero.Core\SyZero.ApiGateway\SyZero.ApiGateway.csproj", "{3E05D1BD-3432-4774-9502-3B716CA40D26}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Nacos", "..\..\SYZERO\src\SyZero.Core\SyZero.Nacos\SyZero.Nacos.csproj", "{A41DA67A-C54F-40C4-A771-BD2BAD2BF3FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Nacos", "..\..\syzero-core\src\SyZero.Core\SyZero.Nacos\SyZero.Nacos.csproj", "{A41DA67A-C54F-40C4-A771-BD2BAD2BF3FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.SqlSugar", "..\..\SYZERO\src\SyZero.Core\SyZero.SqlSugar\SyZero.SqlSugar.csproj", "{57E7BED5-C075-4064-B93A-71182DD09FF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.SqlSugar", "..\..\syzero-core\src\SyZero.Core\SyZero.SqlSugar\SyZero.SqlSugar.csproj", "{57E7BED5-C075-4064-B93A-71182DD09FF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.DynamicWebApi", "..\..\SYZERO\src\SyZero.Core\SyZero.DynamicWebApi\SyZero.DynamicWebApi.csproj", "{8FDAB75F-5ED6-4499-A128-9153E8593CF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.DynamicWebApi", "..\..\syzero-core\src\SyZero.Core\SyZero.DynamicWebApi\SyZero.DynamicWebApi.csproj", "{8FDAB75F-5ED6-4499-A128-9153E8593CF0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Web.Common", "..\..\SYZERO\src\SyZero.Core\SyZero.Web.Common\SyZero.Web.Common.csproj", "{81801E09-E74B-4208-A06D-50760C10AD2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Web.Common", "..\..\syzero-core\src\SyZero.Core\SyZero.Web.Common\SyZero.Web.Common.csproj", "{81801E09-E74B-4208-A06D-50760C10AD2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SyZero.Gateway", "SyZero.Gateway", "{F41C7ACB-4EC6-4E03-A9A3-0A35FDBE84CE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Gateway", "..\..\SYZERO\src\SyZero.Gateway\SyZero.Gateway\SyZero.Gateway.csproj", "{9F0F8E1C-F2DE-4365-BF46-58CFD1998BBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Gateway", "..\..\syzero-core\src\SyZero.Gateway\SyZero.Gateway\SyZero.Gateway.csproj", "{9F0F8E1C-F2DE-4365-BF46-58CFD1998BBB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SyZero.Service", "SyZero.Service", "{9697BD93-A441-4E9E-8F62-460EE854531B}"
 EndProject
@@ -52,11 +52,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Swagger", "..\..\SYZERO\src\SyZero.Core\SyZero.Swagger\SyZero.Swagger.csproj", "{F9FE413E-6691-4F15-B464-0E5B6CFD8BF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Swagger", "..\..\syzero-core\src\SyZero.Core\SyZero.Swagger\SyZero.Swagger.csproj", "{F9FE413E-6691-4F15-B464-0E5B6CFD8BF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Feign", "..\..\SYZERO\src\SyZero.Core\SyZero.Feign\SyZero.Feign.csproj", "{4F7D41E2-BF3D-40EB-A493-C9A40EF26FC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyZero.Feign", "..\..\syzero-core\src\SyZero.Core\SyZero.Feign\SyZero.Feign.csproj", "{4F7D41E2-BF3D-40EB-A493-C9A40EF26FC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyZero.RabbitMQ", "..\..\SYZERO\src\SyZero.Core\SyZero.RabbitMQ\SyZero.RabbitMQ.csproj", "{58C0BCA9-9758-4189-8A98-1AA4F658ABBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyZero.RabbitMQ", "..\..\syzero-core\src\SyZero.Core\SyZero.RabbitMQ\SyZero.RabbitMQ.csproj", "{58C0BCA9-9758-4189-8A98-1AA4F658ABBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
