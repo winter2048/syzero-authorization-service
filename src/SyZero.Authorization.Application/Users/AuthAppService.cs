@@ -86,7 +86,7 @@ namespace SyZero.Authorization.Application.Users
 
         public async Task<bool> LogOut()
         {
-            _cache.Remove("Token:" + ":" + SySession.UserId);
+            _cache.Remove("Token:" + SySession.UserId);
             return true;
         }
 

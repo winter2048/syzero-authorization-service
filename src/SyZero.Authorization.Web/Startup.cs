@@ -6,7 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using SyZero.AspNetCore;
@@ -52,6 +51,7 @@ namespace SyZero.Authorization.Web
                 DefaultApiPrefix = "/api",
                 DefaultAreaName = AppConfig.ServerOptions.Name
             });
+            
             //Swagger
             services.AddSwagger();
         }
@@ -79,6 +79,8 @@ namespace SyZero.Authorization.Web
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSyZero();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -92,10 +94,12 @@ namespace SyZero.Authorization.Web
             });
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseSyAuthMiddleware((sySeesion) => "Token:" + sySeesion.UserId);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+           
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -104,8 +108,6 @@ namespace SyZero.Authorization.Web
 
             });
             app.UseConsul();
-            app.UseSyAuthMiddleware();
-            app.UseSyZero();
         }
     }
 }
