@@ -59,28 +59,27 @@ namespace SyZero.Authorization.Web
         public void ConfigureContainer(ContainerBuilder builder)
         {
             //使用SyZero
-            builder.RegisterModule<SyZeroModule>();
+            builder.AddSyZero();
             //使用AutoMapper
-            builder.RegisterModule<AutoMapperModule>();
+            builder.AddSyZeroAutoMapper();
             //使用SqlSugar仓储
-            builder.RegisterModule<AuthorizationRepositoryModule>();
+            builder.AddSyZeroSqlSugar<AuthorizationDbContext>();
             //注入控制器
-            builder.RegisterModule<SyZeroControllerModule>();
+            builder.AddSyZeroController();
             //注入Log4Net
-            builder.RegisterModule<Log4NetModule>();
+            builder.AddSyZeroLog4Net();
             //注入Redis
-            builder.RegisterModule<RedisModule>();
+            builder.AddSyZeroRedis();
             //注入公共层
-            builder.RegisterModule<CommonModule>();
+            builder.AddSyZeroCommon();
             //注入Feign
-            builder.RegisterModule<FeignModule>();
+            builder.AddSyZeroFeign();
         }
 
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSyZero();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -99,7 +98,6 @@ namespace SyZero.Authorization.Web
             {
                 endpoints.MapControllers();
             });
-           
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -108,6 +106,7 @@ namespace SyZero.Authorization.Web
 
             });
             app.UseConsul();
+            app.InitTables();
         }
     }
 }

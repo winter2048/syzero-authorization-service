@@ -1,15 +1,12 @@
 ﻿
 using SyZero.Authorization.Core.Users;
+using SyZero.SqlSugar.Repositories;
 
 namespace SyZero.Authorization.Repository
 {
-    public class UserRepository : AuthorizationRepositoryBase<User>, IUserRepository
+    public class UserRepository : SqlSugarRepository<User>, IUserRepository
     {
-        public UserRepository(AuthorizationDbContext dbContextProvider) : base(dbContextProvider)
-        {
-
-        }
-
+      
         public string GetTest()
         {
 

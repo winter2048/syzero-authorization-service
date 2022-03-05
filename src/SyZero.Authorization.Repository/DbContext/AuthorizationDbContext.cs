@@ -9,12 +9,11 @@ namespace SyZero.Authorization.Repository
     {
         public AuthorizationDbContext(ConnectionConfig config) : base(config)
         {
-            this.Context.Aop.OnLogExecuted = (sql, pars) =>//SQL执行后
+            this.Aop.OnLogExecuted = (sql, pars) =>//SQL执行后
             {
-                Console.WriteLine(this.Context.Ado.Connection.ConnectionString);
-                WriteLog(sql, pars, this.Context.Ado.SqlExecutionTime.TotalMilliseconds);
+                WriteLog(sql, pars, this.Ado.SqlExecutionTime.TotalMilliseconds);
             };
-            this.Context.Aop.OnError = (exp) =>//SQL报错
+            this.Aop.OnError = (exp) =>//SQL报错
             {
                 Console.WriteLine("sql执行出错：" + exp.Message);
             };
