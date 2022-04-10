@@ -10,8 +10,8 @@ namespace SyZero.Authorization.Application.MapProfile
         {
             CreateMap<User, CreateUserDto>();
             CreateMap<CreateUserDto, User>();
-
-            
+            CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
         }
     }
 }

@@ -44,13 +44,11 @@ namespace SyZero.Authorization.Application.Users
         }
 
 
-        public Task<UserDto> GetUserInfo()
+        public async Task<UserDto> GetUserInfo()
         {
-            if (_sySeeion.UserId == null)
-            {
-                throw new SyMessageException("手机号已注册！");
-            }
-            throw new NotImplementedException();
+            CheckPermission("");
+            var user = await _userRepository.GetModelAsync(p => (p.Id == SySession.UserId));
+            return ObjectMapper.Map<UserDto>(user);
         }
 
         public async Task<bool> GetVerificationCode(string phone)
