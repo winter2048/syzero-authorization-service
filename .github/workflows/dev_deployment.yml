@@ -21,17 +21,12 @@ jobs:
         with:
           path: syzero-authorization-service
 
-      - name: Checkout tools repo
+      - name: Checkout syzero-core repo
         uses: actions/checkout@v3
         with:
           repository: winter2048/syzero-core
           path: syzero-core
           ref: ${{ env.SYZERO_CORE_BRANCH }}
-
-      - name: Setup BuildNumber
-        id: setup_buildnumber
-        run: .\.github\workflows\script\set-buildnumber.ps1 -refName ${{ github.ref_name }}
-        shell: powershell
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
