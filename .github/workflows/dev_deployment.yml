@@ -46,7 +46,7 @@ jobs:
           path: |
             ./syzero-authorization-service/src/SyZero.Authorization.Web/bin/*
 
-  buildImage:
+  pushImage:
     needs: build
     runs-on: ubuntu-latest
     steps:
