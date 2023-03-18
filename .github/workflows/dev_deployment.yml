@@ -50,3 +50,4 @@ jobs:
           name: build
           path: |
             ./syzero-authorization-service/src/SyZero.Authorization.Web/bin/*
+
