@@ -74,4 +74,5 @@ jobs:
           context: ./Release/net6.0/
           push: true
           tags: |
+            harbor.syzero.com/syzero/syzero.authorization:latest
             harbor.syzero.com/syzero/syzero.authorization:${{ github.run_number }}
