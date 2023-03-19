@@ -69,11 +69,22 @@ jobs:
           username: ${{ secrets.HARBOR_DOCKERHUB_USERNAME }}
           password: ${{ secrets.HARBOR_DOCKERHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push (master)
         uses: docker/build-push-action@v4
+        if: github.ref_name == 'master'
         with:
           context: ./Release/net6.0/
           push: true
           tags: |
-            harbor.syzero.com/syzero/syzero.authorization:${{ github.ref_name == 'dev' ? 'dev' : 'latest' }}
-            harbor.syzero.com/syzero/syzero.authorization:${{ github.run_number }}${{ github.ref_name == 'dev' ? '-dev' : '' }}
+            harbor.syzero.com/syzero/syzero.authorization:latest
+            harbor.syzero.com/syzero/syzero.authorization:${{ github.run_number }}
+
+      - name: Build and push (dev)
+        uses: docker/build-push-action@v4
+        if: github.ref_name == 'dev'
+        with:
+          context: ./Release/net6.0/
+          push: true
+          tags: |
+            harbor.syzero.com/syzero/syzero.authorization:dev
+            harbor.syzero.com/syzero/syzero.authorization:${{ github.run_number }}-dev
