@@ -16,7 +16,7 @@ on:
         options:
         - dev
         - prod
-      version:
+      imageVersion:
         description: 'Version'
         required: false
         default: 'dev'
@@ -26,7 +26,7 @@ on:
       environment:
         required: true
         type: string
-      version:
+      imageVersion:
         required: true
         type: string
       
@@ -47,7 +47,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             docker login harbor.syzero.com -u ${{ secrets.HARBOR_DOCKERHUB_USERNAME }} -p ${{ secrets.HARBOR_DOCKERHUB_TOKEN }}
-            docker push harbor.syzero.com/syzero/syzero.authorization:${{ inputs.version }}
+            docker push harbor.syzero.com/syzero/syzero.authorization:${{ inputs.imageVersion }}
             docker stop syzero.authorization
             docker rm syzero.authorization
-            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:${{ inputs.version }}
+            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:${{ inputs.imageVersion }}
