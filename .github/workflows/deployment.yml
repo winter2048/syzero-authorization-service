@@ -38,10 +38,10 @@ jobs:
     steps:
       - name: initialization 
         run: |
-          if ["${{ inputs.imageVersion }}" != ""]; then
+          if [ "${{ inputs.imageVersion }}" != "" ]; then
             echo "IMAGE_VERSION=${{ inputs.imageVersion }}" >> $GITHUB_ENV
           fi
-          if ["${{ inputs.environment }}" != ""]; then
+          if [ "${{ inputs.environment }}" != "" ]; then
             echo "ENVIRONMENT=${{ inputs.environment }}" >> $GITHUB_ENV
           fi
 
@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             docker login harbor.syzero.com -u ${{ secrets.HARBOR_DOCKERHUB_USERNAME }} -p ${{ secrets.HARBOR_DOCKERHUB_TOKEN }}
-            docker push harbor.syzero.com/syzero/syzero.authorization:$IMAGE_VERSION
+            docker push harbor.syzero.com/syzero/syzero.authorization:${{ $env.IMAGE_VERSION }}
             docker stop syzero.authorization
             docker rm syzero.authorization
-            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:$IMAGE_VERSION
+            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:${{ $env.IMAGE_VERSION }}
