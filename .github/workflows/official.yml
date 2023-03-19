@@ -88,10 +88,3 @@ jobs:
           tags: |
             harbor.syzero.com/syzero/syzero.authorization:dev
             harbor.syzero.com/syzero/syzero.authorization:${{ github.run_number }}-dev
-
-  deploy:
-    if: github.ref_name == 'dev'
-    uses: ./syzero-authorization-service/.github/workflows/deployment.yml
-    with:
-      version: dev
-      environment: dev
