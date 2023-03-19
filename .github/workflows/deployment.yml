@@ -21,10 +21,14 @@ on:
         required: false
         default: 'dev'
         type: string
-  workflow_run:
-    workflows: [Official]
-    types: [completed]
-    branches: [dev]
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
       
 
 env:
