@@ -40,8 +40,10 @@ jobs:
         run: |
           if ["${{ inputs.imageVersion }}" != ""]; then
             echo "IMAGE_VERSION=${{ inputs.imageVersion }}" >> $GITHUB_ENV
+          fi
           if ["${{ inputs.environment }}" != ""]; then
             echo "ENVIRONMENT=${{ inputs.environment }}" >> $GITHUB_ENV
+          fi
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v0.1.8
