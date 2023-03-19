@@ -21,24 +21,28 @@ on:
         required: false
         default: 'dev'
         type: string
-  workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
-      imageVersion:
-        required: true
-        type: string
-      
+  workflow_run:
+    workflows: [Official]
+    types: [completed]
+    branches: [dev]
 
 env:
   GB_NUGET_TOKEN: ${{secrets.GB_NUGET_TOKEN}}
   MS_NUGET_TOKEN: ${{secrets.MS_NUGET_TOKEN}}
+  IMAGE_VERSION: dev
+  ENVIRONMENT: dev
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: initialization 
+        run: |
+          if ["${{ inputs.imageVersion }}" != ""]; then
+              $IMAGE_VERSION = '${{ inputs.imageVersion }}'
+          if ["${{ inputs.environment }}" != ""]; then
+              $ENVIRONMENT = "${{ inputs.environment }}"
+
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -47,7 +51,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             docker login harbor.syzero.com -u ${{ secrets.HARBOR_DOCKERHUB_USERNAME }} -p ${{ secrets.HARBOR_DOCKERHUB_TOKEN }}
-            docker push harbor.syzero.com/syzero/syzero.authorization:${{ inputs.imageVersion }}
+            docker push harbor.syzero.com/syzero/syzero.authorization:$IMAGE_VERSION
             docker stop syzero.authorization
             docker rm syzero.authorization
-            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:${{ inputs.imageVersion }}
+            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:$IMAGE_VERSION
