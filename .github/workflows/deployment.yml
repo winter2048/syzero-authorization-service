@@ -33,7 +33,6 @@ env:
 
 jobs:
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: executing remote ssh commands using password
@@ -47,4 +46,4 @@ jobs:
             docker push harbor.syzero.com/syzero/syzero.authorization:${{ inputs.version }}
             docker stop syzero.authorization
             docker rm syzero.authorization
-            docker run -d -p 5008:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:${{ inputs.version }}
+            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:${{ inputs.version }}
