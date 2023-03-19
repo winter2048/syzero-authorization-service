@@ -91,7 +91,7 @@ jobs:
 
   deploy:
     if: github.ref_name == 'dev'
-    uses: ./syzero-authorization-service/.github/workflows/deployment.yml
+    uses: ./syzero-authorization-service/.github/workflows/deployment.yml@dev
     with:
       imageVersion: dev
       environment: dev
