@@ -39,9 +39,9 @@ jobs:
       - name: initialization 
         run: |
           if ["${{ inputs.imageVersion }}" != ""]; then
-              $IMAGE_VERSION = '${{ inputs.imageVersion }}'
+            echo "IMAGE_VERSION=${{ inputs.imageVersion }}" >> $GITHUB_ENV
           if ["${{ inputs.environment }}" != ""]; then
-              $ENVIRONMENT = "${{ inputs.environment }}"
+            echo "ENVIRONMENT=${{ inputs.environment }}" >> $GITHUB_ENV
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v0.1.8
