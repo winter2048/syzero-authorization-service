@@ -12,9 +12,9 @@
 
   <Target Name="AppServiceCopy" AfterTargets="AfterBuild">
     <ItemGroup>
-      <AppServiceDll Include="$(OutputPath)\SyZero.Authorization.IApplication.dll" />
+      <AppServiceDll Include="$(OutputPath)\$(MSBuildProjectName).dll" />
     </ItemGroup>
-    <Copy SourceFiles="@(AppServiceDll)" DestinationFolder="..\..\app" SkipUnchangedFiles="True" />
+    <Copy SourceFiles="@(AppServiceDll)" DestinationFolder="..\..\app" />
   </Target>
 
 </Project>
