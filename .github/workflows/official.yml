@@ -61,6 +61,7 @@ jobs:
           github_token: ${{ secrets.GB_NUGET_TOKEN }}
           directory: ./syzero-authorization-service
           branch: ${{ github.ref }}
+          force: true
 
   pushImage:
     needs: build
