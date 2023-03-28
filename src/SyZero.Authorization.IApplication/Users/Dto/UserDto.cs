@@ -9,5 +9,7 @@ namespace SyZero.Authorization.IApplication.Users.Dto
         public long Id { get; set; }
 
         public string Name { get; set; }
+
+        public string Mail { get; set; }
     }
 }

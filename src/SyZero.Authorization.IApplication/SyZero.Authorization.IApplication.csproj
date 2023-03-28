@@ -9,7 +9,14 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\syzero-core\src\SyZero.Core\SyZero.Web.Common\SyZero.Web.Common.csproj" />
   </ItemGroup>
-  
+
+  <Target Name="AppServiceCopy" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <AppServiceDll Include="$(OutputPath)\SyZero.Authorization.IApplication.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AppServiceDll)" DestinationFolder="..\..\app" SkipUnchangedFiles="True" />
+  </Target>
+
 </Project>
 
 
