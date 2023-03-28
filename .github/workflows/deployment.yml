@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             docker login harbor.syzero.com -u ${{ secrets.HARBOR_DOCKERHUB_USERNAME }} -p ${{ secrets.HARBOR_DOCKERHUB_TOKEN }}
-            docker stop syzero.authorization
-            docker rm syzero.authorization
-            docker pull harbor.syzero.com/syzero/syzero.authorization:${{ env.IMAGE_VERSION }}
-            docker run -d -p 5001:5001 --name=syzero.authorization harbor.syzero.com/syzero/syzero.authorization:${{ env.IMAGE_VERSION }}
+            docker stop syzero.authorization.service
+            docker rm syzero.authorization.service
+            docker pull harbor.syzero.com/syzero/syzero.authorization.service:${{ env.IMAGE_VERSION }}
+            docker run -d -p 5001:5001 --name=syzero.authorization.service harbor.syzero.com/syzero/syzero.authorization.service:${{ env.IMAGE_VERSION }}
