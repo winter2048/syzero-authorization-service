@@ -9,10 +9,6 @@ on:
   push:
     branches: [ "master", "dev" ]
 
-permissions:
-  contents: read
-  pull-requests: write
-
 env:
   GB_NUGET_TOKEN: ${{secrets.GB_NUGET_TOKEN}}
   MS_NUGET_TOKEN: ${{secrets.MS_NUGET_TOKEN}}
