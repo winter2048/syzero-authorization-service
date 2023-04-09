@@ -21,11 +21,6 @@ namespace SyZero.Authorization.IApplication.Users
         {
             _logger = logger;
         }
-        public Task<UserDto> GetUserInfo()
-        {
-            _logger.Error("Fallback => AuthAppService:GetUserInfo");
-            return null;
-        }
 
         public Task<bool> GetVerificationCode(string phone)
         {
@@ -41,12 +36,6 @@ namespace SyZero.Authorization.IApplication.Users
         public Task<bool> LogOut()
         {
             _logger.Error("Fallback => AuthAppService:LogOut");
-            return null;
-        }
-
-        public Task<bool> PutUserInfo(CreateUserDto dto)
-        {
-            _logger.Error("Fallback => AuthAppService:PutUserInfo");
             return null;
         }
 

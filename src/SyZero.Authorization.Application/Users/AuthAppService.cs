@@ -44,13 +44,6 @@ namespace SyZero.Authorization.Application.Users
         }
 
 
-        public async Task<UserDto> GetUserInfo()
-        {
-            CheckPermission("");
-            var user = await _userRepository.GetModelAsync(p => (p.Id == SySession.UserId));
-            return ObjectMapper.Map<UserDto>(user);
-        }
-
         public async Task<bool> GetVerificationCode(string phone)
         {
             var user = await _userRepository.GetModelAsync(p => p.Phone == phone);
@@ -72,6 +65,7 @@ namespace SyZero.Authorization.Application.Users
                 throw new SyMessageException("密码或账号不正确！");
             }
             var claims = new[] {
+                new Claim(SyClaimTypes.NickName,user.NickName??""),
                 new Claim(SyClaimTypes.UserName,user.Name??""),
                 new Claim(SyClaimTypes.AvatarUrl,user.HeadPicture??""),
                 new Claim(SyClaimTypes.UserId,user.Id.ToString()),
@@ -88,10 +82,7 @@ namespace SyZero.Authorization.Application.Users
             return true;
         }
 
-        public Task<bool> PutUserInfo(CreateUserDto dto)
-        {
-            throw new NotImplementedException();
-        }
+    
 
         public async Task<bool> Register(CreateUserDto input)
         {
