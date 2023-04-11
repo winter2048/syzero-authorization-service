@@ -40,20 +40,6 @@ namespace SyZero.Authorization.IApplication.Users
         [ApiMethod(HttpMethod.POST)]
         Task<bool> LogOut();
 
-        /// <summary>
-        /// 获取登录人信息
-        /// </summary>
-        /// <returns></returns>
-        [ApiMethod(HttpMethod.GET)]
-        Task<UserDto> GetUserInfo();
-
-        /// <summary>
-        /// 修改登录人信息
-        /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
-        [ApiMethod(HttpMethod.PUT)]
-        Task<bool> PutUserInfo(CreateUserDto dto);
     
     }
 }

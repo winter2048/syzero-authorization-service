@@ -19,7 +19,10 @@ namespace SyZero.Authorization.Web.Core.Filter
 
         public void OnResultExecuting(ResultExecutingContext context)
         {
-            context.Result = new JsonResult(new ResultModel((context.Result as ObjectResult)?.Value));
+            if (context.Result.GetType() == typeof(ObjectResult))
+            {
+                context.Result = new JsonResult(new ResultModel((context.Result as ObjectResult)?.Value));
+            }
         }
     }
 

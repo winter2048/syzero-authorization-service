@@ -39,6 +39,11 @@ namespace SyZero.Authorization.Core.Users
         public string HeadPicture { get; set; }
 
         /// <summary>
+        /// 描述
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
         /// 用户等级
         /// </summary>
         public int? Level { get; set; }

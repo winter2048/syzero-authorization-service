@@ -59,6 +59,66 @@
             用户类型
             </summary>
         </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.Mail">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.Sex">
+            <summary>
+            性别 0男 1女 2保密 
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.CreateTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.LastTime">
+            <summary>
+            最后登录时间
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.LastIP">
+            <summary>
+            最后登录IP
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.Type">
+            <summary>
+            用户类型
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.Level">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.PictureUrl">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:SyZero.Authorization.IApplication.Users.Dto.UserDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
         <member name="M:SyZero.Authorization.IApplication.Users.IAuthAppService.GetVerificationCode(System.String)">
             <summary>
             获取验证码
@@ -86,13 +146,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SyZero.Authorization.IApplication.Users.IAuthAppService.GetUserInfo">
+        <member name="M:SyZero.Authorization.IApplication.Users.IUserAppService.GetUserInfo">
             <summary>
             获取登录人信息
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SyZero.Authorization.IApplication.Users.IAuthAppService.PutUserInfo(SyZero.Authorization.IApplication.Users.Dto.CreateUserDto)">
+        <member name="M:SyZero.Authorization.IApplication.Users.IUserAppService.PutUserInfo(SyZero.Authorization.IApplication.Users.Dto.CreateUserDto)">
             <summary>
             修改登录人信息
             </summary>
