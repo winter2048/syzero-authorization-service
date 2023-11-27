@@ -1,5 +1,7 @@
 # syzero-authorization-service
 
+[![Official](https://github.com/winter2048/syzero-authorization-service/actions/workflows/official.yml/badge.svg?branch=dev&event=push)](https://github.com/winter2048/syzero-authorization-service/actions/workflows/official.yml)
+
 #### 介绍
 授权服务
 
