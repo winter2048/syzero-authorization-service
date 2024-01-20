@@ -1,5 +1,4 @@
-﻿using Autofac;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
@@ -45,37 +44,34 @@ namespace SyZero.Authorization.Web
                 options.SerializerSettings.Converters.Add(new LongToStrConverter());
             });
 
+            services.AddSyZero();
+
             //动态WebApi
             services.AddDynamicWebApi(new DynamicWebApiOptions()
             {
                 DefaultApiPrefix = "/api",
                 DefaultAreaName = AppConfig.ServerOptions.Name
             });
-            
+
             //Swagger
             services.AddSwagger();
-        }
-
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
-            //使用SyZero
-            builder.AddSyZero();
             //使用AutoMapper
-            builder.AddSyZeroAutoMapper();
+            services.AddSyZeroAutoMapper();
             //使用SqlSugar仓储
-            builder.AddSyZeroSqlSugar<AuthorizationDbContext>();
+            services.AddSyZeroSqlSugar<AuthorizationDbContext>();
             //注入控制器
-            builder.AddSyZeroController();
-            //注入Log4Net
-            builder.AddSyZeroLog4Net();
-            //注入Redis
-            builder.AddSyZeroRedis();
+            services.AddSyZeroController();
             //注入公共层
-            builder.AddSyZeroCommon();
+            services.AddSyZeroCommon();
+            //注入Log4Net
+            services.AddSyZeroLog4Net();
+            //注入Redis
+            services.AddSyZeroRedis();
+            //注入Consul
+            services.AddConsul();
             //注入Feign
-            builder.AddSyZeroFeign();
+            services.AddSyZeroFeign();
         }
-
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -106,7 +102,7 @@ namespace SyZero.Authorization.Web
 
             });
             app.UseConsul();
-            app.InitTables();
+            //app.InitTables();
         }
     }
 }
