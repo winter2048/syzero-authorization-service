@@ -1,5 +1,4 @@
-﻿using Autofac.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System.Threading;
@@ -12,7 +11,6 @@ namespace SyZero.Authorization.Web
         {
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
             Host.CreateDefaultBuilder(args)
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureAppConfiguration((hostingContext, builder) =>
                {
                    //builder.AddNacos(cancellationTokenSource.Token); //Nacos动态配置

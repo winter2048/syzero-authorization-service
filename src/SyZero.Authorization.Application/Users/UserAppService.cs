@@ -24,7 +24,6 @@ namespace SyZero.Authorization.Application.Users
         private readonly ISyEncode _syEncode;
         private readonly IToken _token;
         private readonly IJsonSerialize _jsonSerialize;
-        private readonly ISySession _sySeeion;
 
         public UserAppService(IUserRepository userRepository,
            ICache cache,
@@ -38,7 +37,6 @@ namespace SyZero.Authorization.Application.Users
             _syEncode = syEncode;
             _token = token;
             _jsonSerialize = jsonSerialize;
-            _sySeeion = sySeeion;
         }
 
         public async Task<UserDto> GetUserInfo()
