@@ -59,12 +59,11 @@ namespace SyZero.Authorization.Application.Users
         public async Task<string> Login(LoginDto input)
         {
             _logger.Info("登录：" + input.Phone);
-            //var user = await _userRepository.GetModelAsync(p => (p.Phone == input.Phone || p.Name == input.UserName) && p.Password == _syEncode.Get32MD5One(input.PassWord) && p.Type == input.Type);
-            //if (user == null)
-            //{
-            //    throw new SyMessageException("密码或账号不正确！");
-            //}
-            var user = new User();
+            var user = await _userRepository.GetModelAsync(p => (p.Phone == input.Phone || p.Name == input.UserName) && p.Password == _syEncode.Get32MD5One(input.PassWord) && p.Type == input.Type);
+            if (user == null)
+            {
+                throw new SyMessageException("密码或账号不正确！");
+            }
             var claims = new[] {
                 new Claim(SyClaimTypes.NickName,user.NickName??""),
                 new Claim(SyClaimTypes.UserName,user.Name??""),
