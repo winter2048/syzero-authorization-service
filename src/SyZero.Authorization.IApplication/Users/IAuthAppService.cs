@@ -15,6 +15,7 @@ namespace SyZero.Authorization.IApplication.Users
         /// </summary>
         /// <param name="phone"></param>
         /// <returns></returns>
+        [Get("GetVerificationCode")]
         Task<bool> GetVerificationCode(string phone);
 
         /// <summary>
@@ -22,7 +23,7 @@ namespace SyZero.Authorization.IApplication.Users
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        [ApiMethod(HttpMethod.POST)]
+        [Post("Login")]
         Task<string> Login(LoginDto input);
 
         /// <summary>
@@ -30,14 +31,14 @@ namespace SyZero.Authorization.IApplication.Users
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        [ApiMethod(HttpMethod.POST)]
+        [Post("Register")]
         Task<bool> Register(CreateUserDto input);
 
         /// <summary>
         /// 退出登录
         /// </summary>
         /// <returns></returns>
-        [ApiMethod(HttpMethod.POST)]
+        [Post("LogOut")]
         Task<bool> LogOut();
 
     

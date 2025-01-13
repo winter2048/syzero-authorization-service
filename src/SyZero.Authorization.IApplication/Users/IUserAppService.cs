@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SyZero.Application.Routing;
+using SyZero.Application.Service.Dto;
+using SyZero.Application.Service;
 using SyZero.Authorization.IApplication.Users.Dto;
 
 namespace SyZero.Authorization.IApplication.Users
 {
-    public interface IUserAppService : IApplicationServiceBase
+    public interface IUserAppService : IAsyncCrudAppService<UserDto, PageAndSortQueryDto, CreateUserDto>, IApplicationServiceBase
     {
-
         /// <summary>
         /// 获取登录人信息
         /// </summary>
         /// <returns></returns>
-        [ApiMethod(HttpMethod.GET, "UserInfo")]
+        [Get("UserInfo")]
         Task<UserDto> GetUserInfo();
 
         /// <summary>
@@ -23,10 +24,10 @@ namespace SyZero.Authorization.IApplication.Users
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        [ApiMethod(HttpMethod.PUT, "UserInfo")]
+        [Put("UserInfo")]
         Task<bool> PutUserInfo(CreateUserDto dto);
 
-        [ApiMethod(HttpMethod.GET, "GetUser")]
+        [Get("GetUser")]
         Task<UserDto> GetUser(long id);
     }
 }
