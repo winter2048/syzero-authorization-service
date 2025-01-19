@@ -102,7 +102,7 @@ namespace SyZero.Authorization.Web
 
             });
             app.UseConsul();
-            //app.InitTables();
+            app.InitTables();
         }
     }
 }

@@ -159,5 +159,83 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="T:Refit.Implementation.Generated">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.GetVerificationCode(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.Login(SyZero.Authorization.IApplication.Users.Dto.LoginDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.Register(SyZero.Authorization.IApplication.Users.Dto.CreateUserDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.LogOut">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.SyZero#Authorization#IApplication#Users#IAuthAppService#GetVerificationCode(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.SyZero#Authorization#IApplication#Users#IAuthAppService#Login(SyZero.Authorization.IApplication.Users.Dto.LoginDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.SyZero#Authorization#IApplication#Users#IAuthAppService#Register(SyZero.Authorization.IApplication.Users.Dto.CreateUserDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIAuthAppService.SyZero#Authorization#IApplication#Users#IAuthAppService#LogOut">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.GetUserInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.PutUserInfo(SyZero.Authorization.IApplication.Users.Dto.CreateUserDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.GetUser(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Authorization#IApplication#Users#IUserAppService#GetUserInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Authorization#IApplication#Users#IUserAppService#PutUserInfo(SyZero.Authorization.IApplication.Users.Dto.CreateUserDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Authorization#IApplication#Users#IUserAppService#GetUser(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Application#Service#IAsyncCrudAppService{SyZero#Authorization#IApplication#Users#Dto#UserDto,SyZero#Application#Service#Dto#PageAndSortQueryDto,SyZero#Authorization#IApplication#Users#Dto#CreateUserDto,SyZero#Authorization#IApplication#Users#Dto#UserDto}#Get(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Application#Service#IAsyncCrudAppService{SyZero#Authorization#IApplication#Users#Dto#UserDto,SyZero#Application#Service#Dto#PageAndSortQueryDto,SyZero#Authorization#IApplication#Users#Dto#CreateUserDto,SyZero#Authorization#IApplication#Users#Dto#UserDto}#List(SyZero.Application.Service.Dto.PageAndSortQueryDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Application#Service#IAsyncCrudAppService{SyZero#Authorization#IApplication#Users#Dto#UserDto,SyZero#Application#Service#Dto#PageAndSortQueryDto,SyZero#Authorization#IApplication#Users#Dto#CreateUserDto,SyZero#Authorization#IApplication#Users#Dto#UserDto}#Create(SyZero.Authorization.IApplication.Users.Dto.CreateUserDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Application#Service#IAsyncCrudAppService{SyZero#Authorization#IApplication#Users#Dto#UserDto,SyZero#Application#Service#Dto#PageAndSortQueryDto,SyZero#Authorization#IApplication#Users#Dto#CreateUserDto,SyZero#Authorization#IApplication#Users#Dto#UserDto}#Update(System.Int64,SyZero.Authorization.IApplication.Users.Dto.UserDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.SyZeroAuthorizationIApplicationUsersIUserAppService.SyZero#Application#Service#IAsyncCrudAppService{SyZero#Authorization#IApplication#Users#Dto#UserDto,SyZero#Application#Service#Dto#PageAndSortQueryDto,SyZero#Authorization#IApplication#Users#Dto#CreateUserDto,SyZero#Authorization#IApplication#Users#Dto#UserDto}#Delete(System.Int64)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>
