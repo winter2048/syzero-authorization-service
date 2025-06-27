@@ -30,7 +30,6 @@ namespace SyZero.Authorization.Application.Users
            ISyEncode syEncode,
            IToken token,
            IJsonSerialize jsonSerialize,
-           ILogger logger,
            ISySession sySeeion)
         {
             _userRepository = userRepository;
