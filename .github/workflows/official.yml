@@ -33,7 +33,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 9.0.x
 
       - name: Restore dependencies
         run: dotnet restore ./syzero-authorization-service/src/SyZero.Authorization.sln
@@ -98,7 +98,7 @@ jobs:
         uses: docker/build-push-action@v4
         if: github.ref_name == 'master'
         with:
-          context: ./Release/net8.0/
+          context: ./Release/net9.0/
           push: true
           tags: |
             harbor.syzero.com/syzero/syzero.authorization.service:latest
@@ -108,7 +108,7 @@ jobs:
         uses: docker/build-push-action@v4
         if: github.ref_name == 'dev'
         with:
-          context: ./Release/net8.0/
+          context: ./Release/net9.0/
           push: true
           tags: |
             harbor.syzero.com/syzero/syzero.authorization.service:dev

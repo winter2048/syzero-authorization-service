@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,28 +7,27 @@ using System.Threading.Tasks;
 using SyZero.Application.Service.Dto;
 using SyZero.Authorization.IApplication.Users.Dto;
 using SyZero.Client;
-using SyZero.Logger;
 
 namespace SyZero.Authorization.IApplication.Users
 {
     public class UserAppServiceFallback : IUserAppService, IFallback
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<AuthAppServiceFallback> _logger;
 
-        public UserAppServiceFallback(ILogger logger)
+        public UserAppServiceFallback(ILogger<AuthAppServiceFallback> logger)
         {
             _logger = logger;
         }
 
         public Task<bool> PutUserInfo(CreateUserDto dto)
         {
-            _logger.Error("Fallback => AuthAppService:PutUserInfo");
+            _logger.LogError("Fallback => AuthAppService:PutUserInfo");
             return null;
         }
 
         public Task<UserDto> GetUserInfo()
         {
-            _logger.Error("Fallback => AuthAppService:GetUserInfo");
+            _logger.LogError("Fallback => AuthAppService:GetUserInfo");
             return null;
         }
 

@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Crypto.Tls;
+﻿using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Crypto.Tls;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -8,7 +9,6 @@ using SyZero.Authorization.IApplication.Users;
 using SyZero.Authorization.IApplication.Users.Dto;
 using SyZero.Authorization.Repository;
 using SyZero.Cache;
-using SyZero.Logger;
 using SyZero.Runtime.Security;
 using SyZero.Runtime.Session;
 using SyZero.Serialization;
@@ -23,7 +23,6 @@ namespace SyZero.Authorization.Application.Users
         private readonly ISyEncode _syEncode;
         private readonly IToken _token;
         private readonly IJsonSerialize _jsonSerialize;
-        private readonly ILogger _logger;
         private readonly ISySession _sySeeion;
 
         public AuthAppService(IUserRepository userRepository,
@@ -31,7 +30,6 @@ namespace SyZero.Authorization.Application.Users
            ISyEncode syEncode,
            IToken token,
            IJsonSerialize jsonSerialize,
-           ILogger logger,
            ISySession sySeeion)
         {
             _userRepository = userRepository;
@@ -39,7 +37,6 @@ namespace SyZero.Authorization.Application.Users
             _syEncode = syEncode;
             _token = token;
             _jsonSerialize = jsonSerialize;
-            _logger = logger;
             _sySeeion = sySeeion;
         }
 
@@ -58,7 +55,7 @@ namespace SyZero.Authorization.Application.Users
 
         public async Task<string> Login(LoginDto input)
         {
-            _logger.Info("登录：" + input.Phone);
+            Logger.LogInformation("登录：" + input.Phone);
             var user = await _userRepository.GetModelAsync(p => (p.Phone == input.Phone || p.Name == input.UserName) && p.Password == _syEncode.Get32MD5One(input.PassWord) && p.Type == input.Type);
             if (user == null)
             {
